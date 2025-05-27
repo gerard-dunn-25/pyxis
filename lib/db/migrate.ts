@@ -15,14 +15,10 @@ async function runMigrations() {
     const db = drizzle(sql)
 
     await migrate(db, { migrationsFolder: './drizzle' })
+    console.log('Migrations completed successfully.')
   } catch (error) {
     console.error('Error running migrations:', error)
+    process.exit(1)
   }
 }
 runMigrations()
-  .then(() => {
-    console.log('Migrations completed successfully.')
-  })
-  .catch((error) => {
-    console.error('Error in migration process:', error)
-  })
