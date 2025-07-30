@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
     const queryUserId = searchParams.get('userId')
     const parentId = searchParams.get('parentId')
 
+    // Verify the user is requesting their own files
     if (!queryUserId || queryUserId !== userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
