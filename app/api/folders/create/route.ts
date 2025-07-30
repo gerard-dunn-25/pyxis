@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
+    // Authenticate the user
     const { userId } = await auth()
     if (!userId) {
       return NextResponse.json({ error: ' Unauthorized' }, { status: 401 })
@@ -24,6 +25,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Check if parent folder exists if parentId is provided
 
     if (parentId) {
       const [parentFolder] = await db
@@ -45,7 +48,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // create the folder
+    // Create the folder
     const folderData = {
       id: uuidv4(),
       name: name.trim(),
