@@ -30,6 +30,7 @@
     "@hookform/resolvers": "^5.0.1",
     "@imagekit/next": "^2.1.2",
     "@neondatabase/serverless": "^1.0.0",
+    "axios": "^1.11.0",
     "date-fns": "^4.1.0",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.43.1",
