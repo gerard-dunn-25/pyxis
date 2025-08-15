@@ -1,4 +1,4 @@
-CREATE TABLE "files" (
+CREATE TABLE IF NOT EXISTS "files" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
 	"path" text NOT NULL,
