@@ -77,6 +77,7 @@ export default function FileList({
   // Fetch files when userId, refreshTrigger, or currentFolder changes
   useEffect(() => {
     fetchFiles()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, refreshTrigger, currentFolder])
 
   // Filter files based on active tab
